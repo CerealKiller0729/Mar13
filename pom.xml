@@ -27,10 +27,16 @@
             <artifactId>commons-collections4</artifactId>
             <version>4.4</version> <!-- Check for the latest version -->
         </dependency>
+        <!-- Log4j 2.x dependencies -->
         <dependency>
-    <groupId>log4j</groupId>
-    <artifactId>log4j</artifactId>
-    <version>1.2.17</version> <!-- Check for the latest version -->
-</dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>2.20.0</version> <!-- Replace with the latest version -->
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>2.20.0</version> <!-- Replace with the latest version -->
+        </dependency>
     </dependencies>
 </project>
