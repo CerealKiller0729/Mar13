@@ -46,7 +46,7 @@ public class MotorPHMain {
                             ----- DASHBOARD-----
 
                             1: Individual Employee Details
- 2: All Employee Details
+                            2: All Employee Details
                             -------------------------
                             Choose: """);
                     detailSub = scanner.next();
