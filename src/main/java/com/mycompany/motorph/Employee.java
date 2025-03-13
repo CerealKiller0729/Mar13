@@ -40,6 +40,16 @@ public class Employee {
     // Constructor to initialize an Employee object with data
     public Employee(String[] data) {
         this.employeeNumber = getValue(data, 0);
+        // If the employee number is numeric in the Excel file, convert it to a string
+    try {
+        // Attempt to parse the employee number as a double
+        double empNum = Double.parseDouble(this.employeeNumber);
+        // Convert to an integer to remove decimal points and then to a string
+        this.employeeNumber = String.valueOf((int) empNum);
+    } catch (NumberFormatException e) {
+        // If parsing fails, keep the original string
+        System.err.println("Error parsing employee number: " + this.employeeNumber);
+    }
         this.lastName = getValue(data, 1);
         this.firstName = getValue(data, 2);
         this.birthday = getValue(data, 3);
@@ -153,8 +163,9 @@ public class Employee {
         if (value.equalsIgnoreCase("Hourly Rate")) {
             return Double.NaN;
         }
-
-        try {
+          // Clean the value to remove any non-numeric characters
+          value = value.replaceAll("[^0-9.]", ""); // Keep only digits and decimal points
+         try {
             return Double.parseDouble(value);
         } catch (NumberFormatException e) {
             System.err.println("Error parsing double value at index " + index + " for Employee ID " + getEmployeeNumber() + ": " + value);
